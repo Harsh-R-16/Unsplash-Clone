@@ -1,11 +1,11 @@
 import React from "react";
-import "./Navbar.css";
+import { Nav } from "./Styled-Navbar";
 import { data, link } from "./data";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav>
+    <Nav>
       <section id="top">
         <svg
           width="32"
@@ -68,6 +68,6 @@ export default function Navbar() {
           </Link>
         ))}
       </section>
-    </nav>
+    </Nav>
   );
 }
