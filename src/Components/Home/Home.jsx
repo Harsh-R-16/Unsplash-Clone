@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import "./Home.css";
-import { images as imgs } from "./images";
+import { Main, Section } from "./Styled-Home";
+import { heroImgs, imgs } from "./images";
 import Article from "../Article/Article";
 export default function Home() {
+  let index = Math.floor(Math.random() * heroImgs.length);
   let [images, setImages] = useState(imgs);
   useEffect(() => {
     fetch(
@@ -15,12 +16,8 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main id="home-main">
-        <img
-          src="https://images.unsplash.com/photo-1560260240-c6ef90a163a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8b2NlYW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt=""
-          id="hero-img"
-        />
+      <Main>
+        <img src={heroImgs[index]} alt="" id="hero-img" />
         <section id="hero">
           <h1>Unsplash</h1>
           <h2>
@@ -72,12 +69,12 @@ export default function Home() {
             </p>
           </div>
         </section>
-      </main>
-      <section id="images">
+      </Main>
+      <Section>
         <Article images={images.slice(0, 10)} />
         <Article images={images.slice(10, 20)} />
         <Article images={images.slice(20)} />
-      </section>
+      </Section>
     </>
   );
 }

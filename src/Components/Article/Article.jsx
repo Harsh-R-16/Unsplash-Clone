@@ -1,8 +1,9 @@
 import React from "react";
+import Article from "./Styled-Article";
 
-export default function Article({ images }) {
+export default function MainArticle({ images }) {
   return (
-    <article>
+    <Article>
       {images.map(
         (
           {
@@ -37,6 +38,6 @@ export default function Article({ images }) {
           </div>
         )
       )}
-    </article>
+    </Article>
   );
 }

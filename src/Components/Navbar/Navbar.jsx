@@ -63,7 +63,7 @@ export default function Navbar() {
       </section>
       <section id="bottom">
         {data.map((i, index) => (
-          <Link to={`/t/${link[index]}`}>
+          <Link to={`/t/${link[index]}`} key={index}>
             <p key={index}>{i}</p>
           </Link>
         ))}
