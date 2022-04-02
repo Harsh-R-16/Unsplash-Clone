@@ -512,9 +512,7 @@ let imgs = [
     liked_by_user: false,
     current_user_collections: [],
     sponsorship: {
-      impression_urls: [
-        "https://ad.doubleclick.net/ddm/trackimp/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166536074;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=?",
-      ],
+      impression_urls: [""],
       tagline: "Unlimited Me, In Portrait",
       tagline_url:
         "https://ad.doubleclick.net/ddm/trackclk/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166536074;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=?https://www.oppo.com/en/events/reno-academy/?utm_medium=display&utm_source=unsplash&utm_campaign=oppo-hylink-global_en-brand-lifecycle--cpm-reach_unsplash_hqunsplash_design2_hq-20220215-20220531-awareness-reach&utm_content_image_ads-3264x2448",
@@ -972,9 +970,7 @@ let imgs = [
     liked_by_user: false,
     current_user_collections: [],
     sponsorship: {
-      impression_urls: [
-        "https://ad.doubleclick.net/ddm/trackimp/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166505476;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=?",
-      ],
+      impression_urls: [""],
       tagline: "Unlimited Me, In Portrait",
       tagline_url:
         "https://ad.doubleclick.net/ddm/trackclk/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166505476;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=?https://www.oppo.com/en/events/reno-academy/?utm_medium=display&utm_source=unsplash&utm_campaign=oppo-hylink-global_en-brand-lifecycle--cpm-reach_unsplash_hqunsplash_design1_hq-20220215-20220531-awareness-reach&utm_content_image_ads-3264x2448",
@@ -1883,9 +1879,7 @@ let imgs = [
     liked_by_user: false,
     current_user_collections: [],
     sponsorship: {
-      impression_urls: [
-        "https://ad.doubleclick.net/ddm/trackimp/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166854633;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=?",
-      ],
+      impression_urls: [""],
       tagline: "Unlimited Me, In Portrait",
       tagline_url:
         "https://ad.doubleclick.net/ddm/trackclk/N558202.3286893UNSPLASH/B27256153.328733777;dc_trk_aid=520815018;dc_trk_cid=166854633;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=?https://www.oppo.com/en/events/reno-academy/?utm_medium=display&utm_source=unsplash&utm_campaign=oppo-hylink-global_en-brand-lifecycle--cpm-reach_unsplash_hqunsplash_selfieportrait_hq-20220215-20220531-awareness-reach&utm_content_image_ads-3264x2448",

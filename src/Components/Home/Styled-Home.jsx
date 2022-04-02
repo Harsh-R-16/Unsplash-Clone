@@ -24,14 +24,13 @@ let Main = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  h3 + div p {
-    font-size: 13.4px;
-  }
-
-  p span {
-    font-weight: 900;
+    p {
+      font-size: 13.4px;
+      span {
+        font-weight: 900;
+      }
+    }
   }
 
   h1 {
@@ -58,17 +57,18 @@ let Main = styled.main`
     padding: 10px 13px;
     background-color: #ffffff;
     width: 800px;
-  }
 
-  div#input-div input {
-    flex-grow: 1;
-    border: none;
-    padding: 0 10px;
-    background-color: inherit;
-    font-size: 14px;
-  }
-  input:focus {
-    outline: none;
+    input {
+      flex-grow: 1;
+      border: none;
+      padding: 0 10px;
+      background-color: inherit;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 `;
 
