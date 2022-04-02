@@ -40,7 +40,7 @@ let Main = styled.main`
         margin: 5px 12px 6px;
       }
       .main-img {
-        height: 170px;
+        height: 200px;
         width: 100%;
         margin: 0;
       }
