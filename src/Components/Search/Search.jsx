@@ -13,7 +13,7 @@ export default function Search() {
       .then((res) => {
         setImages(res.photos.results);
       });
-  }, []);
+  }, [query]);
   // console.log(images);
   return (
     <>
