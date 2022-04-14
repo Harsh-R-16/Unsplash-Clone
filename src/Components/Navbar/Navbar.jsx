@@ -1,9 +1,15 @@
 import React from "react";
 import { Nav } from "./Styled-Navbar";
 import { data, link } from "./data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  let navigate = useNavigate();
+  const func = (e) => {
+    e.preventDefault();
+    let inp = e.target.elements[0].value;
+    navigate(`/s/photos/${inp}`);
+  };
   return (
     <Nav>
       <section id="top">
@@ -30,7 +36,12 @@ export default function Navbar() {
           >
             <path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z"></path>
           </svg>
-          <input type="text" placeholder="Search free high-resolution photos" />
+          <form action="" onSubmit={func}>
+            <input
+              type="text"
+              placeholder="Search free high-resolution photos"
+            />
+          </form>
           <svg
             width="20"
             height="20"

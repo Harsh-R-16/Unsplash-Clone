@@ -22,14 +22,18 @@ let Nav = styled.nav`
       padding: 7px 13px;
       background-color: #eeeeee;
 
-      input {
+      form {
         flex-grow: 1;
-        border: none;
-        padding: 0 10px;
-        background-color: inherit;
 
-        &:focus {
-          outline: none;
+        input {
+          width: 100%;
+          border: none;
+          padding: 0 10px;
+          background-color: inherit;
+
+          &:focus {
+            outline: none;
+          }
         }
       }
     }

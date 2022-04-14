@@ -16,7 +16,7 @@ function App() {
         <Route path="/t" element={<Topics />} />
         <Route path="/t/:topic" element={<Topic />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/s/photos:query" element={<Search />} />
+        <Route path="/s/photos/:query" element={<Search />} />
       </Routes>
     </div>
   );
