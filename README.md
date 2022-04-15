@@ -1,6 +1,6 @@
 # Unsplash Website Clone
 
-Unsplash The internet’s source of freely-usable images. Created All Category Photos Pages. Developed Landing Page and Collection Page with Pixel-Perfect UI.
+Unsplash The internet’s source of freely-usable images. In this Project I Created All Category Photos Pages. Developed Landing Page and Collection Page with Pixel-Perfect UI.
 
 # Video Link
 
@@ -10,7 +10,7 @@ Unsplash The internet’s source of freely-usable images. Created All Category P
 
 > [Unsplash.com](https://unsplash-clone-harsh.netlify.app/)
 
-# Technology We Used
+# Technology Used
 
 1. React
 2. Styled Components
