@@ -49,7 +49,7 @@ let Main = styled.main`
     text-transform: capitalize;
   }
 
-  div#input-div {
+  form#input-div {
     display: flex;
     align-items: center;
     margin: 20px 0;

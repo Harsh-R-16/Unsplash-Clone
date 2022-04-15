@@ -12,6 +12,7 @@ export default function Search() {
       .then((res) => res.json())
       .then((res) => {
         setImages(res.photos.results);
+        console.log(res.photos.results);
       });
   }, [query]);
   // console.log(images);
