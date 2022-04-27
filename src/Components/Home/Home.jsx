@@ -3,12 +3,13 @@ import { Main, Section } from "./Styled-Home";
 import { heroImgs, imgs } from "./images";
 import Article from "../Article/Article";
 import { useNavigate } from "react-router-dom";
+let page = Math.floor(Math.random() * 50);
 
 export default function Home() {
   let index = Math.floor(Math.random() * heroImgs.length);
   let [images, setImages] = useState(imgs);
   useEffect(() => {
-    fetch("https://unsplash.com/napi/photos?per_page=30&page=4")
+    fetch(`https://unsplash.com/napi/photos?per_page=30&page=${page}`)
       .then((res) => res.json())
       .then((res) => {
         setImages(res);

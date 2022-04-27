@@ -26,12 +26,15 @@ let Article = styled.article`
   div .download {
     bottom: 20px;
     right: 12px;
-    padding: 6px 6px 8px 8px;
+    padding: 6px 7px 8px 8px;
   }
 
   div .like {
     right: 44px;
     top: 12px;
+    i {
+      margin-left: 5px;
+    }
   }
 
   .logo {

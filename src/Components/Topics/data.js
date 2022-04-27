@@ -24,4 +24,29 @@ let data = [
   "Athletics",
 ];
 
-export { data };
+let link = [
+  "act-for-nature",
+  "color-of-water",
+  "current-events",
+  "wallpapers",
+  "3d-renders",
+  "textures-patterns",
+  "experimental",
+  "architecture",
+  "nature",
+  "business-work",
+  "fashion",
+  "film",
+  "food-drink",
+  "health",
+  "people",
+  "interiors",
+  "street-photography",
+  "travel",
+  "animals",
+  "spirituality",
+  "arts-culture",
+  "history",
+  "athletics",
+];
+export { data, link };

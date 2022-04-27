@@ -16,6 +16,7 @@ export default function MainArticle({ images }) {
               links: { html },
             },
             sponsorship,
+            likes,
           },
           index
         ) => (
@@ -23,10 +24,13 @@ export default function MainArticle({ images }) {
             <button className="collection">
               <i className="fa fa-plus"></i>
             </button>
-            <button className="download">
-              <i className="fa fa-download"></i>
-            </button>
+            <a href={raw} download target="_blank" rel="noreferrer">
+              <button className="download">
+                <i className="fa fa-download"></i>
+              </button>
+            </a>
             <button className="like">
+              {likes}
               <i className="fa fa-heart"></i>
             </button>
             <img src={raw} alt="" />

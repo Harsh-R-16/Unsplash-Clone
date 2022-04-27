@@ -1,6 +1,7 @@
 import React from "react";
 import { Main } from "./Styled-Topics";
-import { data } from "./data";
+import { data, link } from "./data";
+import { Link } from "react-router-dom";
 
 export default function Topics() {
   return (
@@ -89,7 +90,9 @@ export default function Topics() {
               alt=""
               className="logo"
             />
-            <h3>{i}</h3>
+            <h3>
+              <Link to={`/t/${link[index]}`}>{i}</Link>
+            </h3>
             <h5>by Unsplash (Stock Photos Api)</h5>
             <p>
               This year marks UNEP’s 50th birthday, and they’ve asked the

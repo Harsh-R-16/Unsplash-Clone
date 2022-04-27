@@ -40,7 +40,7 @@ let Main = styled.main`
         margin: 5px 12px 6px;
       }
       .main-img {
-        height: 200px;
+        height: 220px;
         width: 100%;
         margin: 0;
       }
@@ -50,6 +50,11 @@ let Main = styled.main`
         height: 55px;
         border-radius: 50%;
         aspect-ratio: 1;
+      }
+      h3 a {
+        color: inherit;
+        text-decoration: none;
+        margin-left: 0;
       }
       h5 {
         color: rgb(126, 125, 124);

@@ -3,14 +3,13 @@ import { topics, heroImgs } from "./data";
 import { imgs } from "../Home/images";
 import Article from "../Article/Article";
 import { Main, Divs, Section } from "./Styled-Explore";
+let page = Math.floor(Math.random() * 50);
 
 export default function Explore() {
   let [images, setImages] = useState(imgs);
   console.log(images);
   useEffect(() => {
-    fetch(
-      "https://cors-anywhere.herokuapp.com/https://unsplash.com/napi/photos?per_page=30&page=1"
-    )
+    fetch(`https://unsplash.com/napi/photos?per_page=30&page=${page}`)
       .then((res) => res.json())
       .then((res) => {
         setImages(res);

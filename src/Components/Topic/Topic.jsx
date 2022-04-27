@@ -33,7 +33,7 @@ export default function Topic() {
               <svg
                 width="24"
                 height="24"
-                class="qZLl_"
+                className="qZLl_"
                 viewBox="0 0 32 32"
                 version="1.1"
                 aria-hidden="false"
@@ -50,7 +50,7 @@ export default function Topic() {
               <svg
                 width="24"
                 height="24"
-                class="qZLl_"
+                className="qZLl_"
                 viewBox="0 0 32 32"
                 version="1.1"
                 aria-hidden="false"
@@ -67,7 +67,7 @@ export default function Topic() {
               <svg
                 width="24"
                 height="24"
-                class="qZLl_"
+                className="qZLl_"
                 viewBox="0 0 32 32"
                 version="1.1"
                 aria-hidden="false"
@@ -84,7 +84,7 @@ export default function Topic() {
               <svg
                 width="24"
                 height="24"
-                class="qZLl_"
+                className="qZLl_"
                 viewBox="0 0 32 32"
                 version="1.1"
                 aria-hidden="false"
