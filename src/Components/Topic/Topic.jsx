@@ -3,13 +3,16 @@ import { useParams } from "react-router-dom";
 import Article from "../Article/Article";
 import { Info, Section } from "./Styled-Topic";
 import { para1, para2 } from "./data";
+let page = Math.floor(Math.random() * 50);
 
 export default function Topic() {
   let { topic } = useParams();
   let [images, setImages] = useState([]);
   let index = Math.floor(Math.random() * para1.length);
   useEffect(() => {
-    fetch(`https://unsplash.com/napi/topics/${topic}/photos?page=1&per_page=30`)
+    fetch(
+      `https://unsplash.com/napi/topics/${topic}/photos?page=${page}&per_page=30`
+    )
       .then((res) => res.json())
       .then((res) => {
         setImages(res);
