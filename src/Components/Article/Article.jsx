@@ -7,7 +7,7 @@ export default function MainArticle({ images }) {
       {images.map(
         (
           {
-            urls: { raw },
+            urls: { regular },
             user: { name },
             user: {
               profile_image: { large },
@@ -24,7 +24,7 @@ export default function MainArticle({ images }) {
             <button className="collection">
               <i className="fa fa-plus"></i>
             </button>
-            <a href={raw} download target="_blank" rel="noreferrer">
+            <a href={regular} download target="_blank" rel="noreferrer">
               <button className="download">
                 <i className="fa fa-download"></i>
               </button>
@@ -33,7 +33,7 @@ export default function MainArticle({ images }) {
               {likes}
               <i className="fa fa-heart"></i>
             </button>
-            <img src={raw} alt="" />
+            <img src={regular} alt="" />
             <img src={large} alt="" className="logo" />
             <h3>
               <a href={html}>{name}</a>
