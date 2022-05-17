@@ -10,23 +10,27 @@ let page = 2;
 
 export default function Topic() {
   let { topic } = useParams();
+  localStorage.setItem("topic", topic);
   const [images, setImages] = useState([[], [], []]);
-
   useEffect(() => {
-    setImages([[], [], []]);
-    window.scrollTo(0, 0);
-    page = 2;
     fetch(`https://unsplash.com/napi/topics/${topic}/photos?page=1&per_page=30`)
       .then((res) => res.json())
       .then((res) => {
         setImages(() => [res.slice(0, 10), res.slice(10, 20), res.slice(20)]);
       });
+    return () => {
+      setImages([[], [], []]);
+      window.scrollTo(0, 0);
+      page = 2;
+    };
   }, [topic]);
 
   async function fetchImages(page) {
     console.log(page);
     const a = await fetch(
-      `https://unsplash.com/napi/topics/${topic}/photos?page=${page}&per_page=30`
+      `https://unsplash.com/napi/topics/${localStorage.getItem(
+        "topic"
+      )}/photos?page=${page}&per_page=30`
     );
     const res = await a.json();
     setImages((images) => [
@@ -45,7 +49,6 @@ export default function Topic() {
     };
     if (obj.total - obj.scrollY < 2000) {
       running = true;
-      console.log("Ok Ok");
       fetchImages(page++);
       setTimeout(() => {
         running = false;
