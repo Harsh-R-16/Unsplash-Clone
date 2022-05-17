@@ -1,20 +1,53 @@
 import { useState, useEffect } from "react";
 import { Main, Section } from "./Styled-Home";
-import { heroImgs, imgs } from "./images";
+import { heroImgs } from "./images";
 import Article from "../Article/Article";
 import { useNavigate } from "react-router-dom";
-let page = Math.floor(Math.random() * 50);
+let index = Math.floor(Math.random() * heroImgs.length);
+let running;
+let page = 2;
 
 export default function Home() {
-  let index = Math.floor(Math.random() * heroImgs.length);
-  let [images, setImages] = useState(imgs);
+  const [images, setImages] = useState([[], [], []]);
+
   useEffect(() => {
-    fetch(`https://unsplash.com/napi/photos?per_page=30&page=${page}`)
+    window.scrollTo(0, 0);
+    fetch(`https://unsplash.com/napi/photos?per_page=30&page=1`)
       .then((res) => res.json())
       .then((res) => {
-        setImages(res);
+        setImages(() => [res.slice(0, 10), res.slice(10, 20), res.slice(20)]);
       });
   }, []);
+
+  async function fetchImages(page) {
+    console.log(page);
+    const a = await fetch(
+      `https://unsplash.com/napi/photos?per_page=30&page=${page}`
+    );
+    const res = await a.json();
+    setImages((images) => [
+      [...images[0], ...res.slice(0, 10)],
+      [...images[1], ...res.slice(10, 20)],
+      [...images[2], ...res.slice(20)],
+    ]);
+  }
+  window.addEventListener("scroll", () => {
+    if (running) return;
+    let obj = {
+      screenHeight: window.innerHeight,
+      scrollY: window.scrollY,
+      total: document.body.offsetHeight,
+    };
+    if (obj.total - obj.scrollY < 2000) {
+      running = true;
+      console.log("Ok Ok");
+      fetchImages(page++);
+      setTimeout(() => {
+        running = false;
+      }, 1800);
+    }
+  });
+
   let navigate = useNavigate();
   const func = (e) => {
     e.preventDefault();
@@ -78,9 +111,9 @@ export default function Home() {
         </section>
       </Main>
       <Section>
-        <Article images={images.slice(0, 10)} />
-        <Article images={images.slice(10, 20)} />
-        <Article images={images.slice(20)} />
+        <Article images={images[0]} />
+        <Article images={images[1]} />
+        <Article images={images[2]} />
       </Section>
     </>
   );

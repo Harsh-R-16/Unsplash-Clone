@@ -3,22 +3,56 @@ import { useParams } from "react-router-dom";
 import Article from "../Article/Article";
 import { Info, Section } from "./Styled-Topic";
 import { para1, para2 } from "./data";
-let page = Math.floor(Math.random() * 50);
+import Loading from "../loading.gif";
+let index = Math.floor(Math.random() * para1.length);
+let running;
+let page = 2;
 
 export default function Topic() {
   let { topic } = useParams();
-  let [images, setImages] = useState([]);
-  let index = Math.floor(Math.random() * para1.length);
+  const [images, setImages] = useState([[], [], []]);
+
   useEffect(() => {
-    fetch(
-      `https://unsplash.com/napi/topics/${topic}/photos?page=${page}&per_page=30`
-    )
+    setImages([[], [], []]);
+    window.scrollTo(0, 0);
+    page = 2;
+    fetch(`https://unsplash.com/napi/topics/${topic}/photos?page=1&per_page=30`)
       .then((res) => res.json())
       .then((res) => {
-        setImages(res);
-        console.log(res);
+        setImages(() => [res.slice(0, 10), res.slice(10, 20), res.slice(20)]);
       });
   }, [topic]);
+
+  async function fetchImages(page) {
+    console.log(page);
+    const a = await fetch(
+      `https://unsplash.com/napi/topics/${topic}/photos?page=${page}&per_page=30`
+    );
+    const res = await a.json();
+    setImages((images) => [
+      [...images[0], ...res.slice(0, 10)],
+      [...images[1], ...res.slice(10, 20)],
+      [...images[2], ...res.slice(20)],
+    ]);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (running) return;
+    let obj = {
+      screenHeight: window.innerHeight,
+      scrollY: window.scrollY,
+      total: document.body.offsetHeight,
+    };
+    if (obj.total - obj.scrollY < 2000) {
+      running = true;
+      console.log("Ok Ok");
+      fetchImages(page++);
+      setTimeout(() => {
+        running = false;
+      }, 2000);
+    }
+  });
+
   return (
     <>
       <Info>
@@ -106,11 +140,23 @@ export default function Topic() {
           </button>
         </article>
       </Info>
-      <Section>
-        <Article images={images.slice(0, 10)} />
-        <Article images={images.slice(10, 20)} />
-        <Article images={images.slice(20)} />
-      </Section>
+      {images[0].length ? (
+        <Section>
+          <Article images={images[0]} />
+          <Article images={images[1]} />
+          <Article images={images[2]} />
+        </Section>
+      ) : (
+        <img
+          src={Loading}
+          alt=""
+          style={{
+            display: "block",
+            width: "170px",
+            margin: "60px auto",
+          }}
+        />
+      )}
     </>
   );
 }

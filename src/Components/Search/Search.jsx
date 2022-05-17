@@ -8,6 +8,7 @@ export default function Search() {
   let { query } = useParams();
   let [images, setImages] = useState(imgs);
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch(`https://unsplash.com/napi/search?query=${query}&per_page=30`)
       .then((res) => res.json())
       .then((res) => {
