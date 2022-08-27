@@ -10,7 +10,7 @@ Unsplash The internet’s source of freely-usable images. In this Project I Crea
 
 > [Unsplash.com](https://unsplash-clone-harsh.netlify.app/)
 
-# Technology Used
+# Created With
 
 1. React
 2. Styled Components
