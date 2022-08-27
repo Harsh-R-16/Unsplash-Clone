@@ -8,7 +8,7 @@ Unsplash The internet’s source of freely-usable images. In this Project I Crea
 
 # Deployed link of the Website
 
-> [Unsplash.com](https://unsplash-clone-harsh.netlify.app/)
+> [https://unsplash-clone-harsh.netlify.app](https://unsplash-clone-harsh.netlify.app/)
 
 # Created With
 
